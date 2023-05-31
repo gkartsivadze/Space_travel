@@ -1,4 +1,6 @@
 $("#dest-menu > li > a").on("click", function() {
+    $("#dest-menu > li").removeClass("active");
+    $(this).parent().addClass("active");
     switch ($(this).attr("id")) {
         case "moon_btn":
             changeOver("Moon")
@@ -26,10 +28,9 @@ function changeOver(planet) {
           var i = jsonData.destinations.filter(x => x.name === planet);
           $("#planet_image").attr("src", i[0].images.png)
           $("#planet_name").text(i[0].name);
-          $("#description").text(i[0].description)
-          $("#distance").text(i[0].distance)
-          $("#travel_time").text(i[0].travel)
-          console.log(i, planet, jsonData);
+          $("#description").text(i[0].description);
+          $("#distance").text(i[0].distance);
+          $("#travel_time").text(i[0].travel);
       }
     });
 }

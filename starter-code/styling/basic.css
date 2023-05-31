@@ -195,8 +195,7 @@ main .right-sec {
   justify-content: space-evenly;
 }
 #dest .right-sec {
-  align-items: start;
-  justify-content: center;
+  place-items: start;
   height: 30rem;
 }
 #dest .sub-h2 {
