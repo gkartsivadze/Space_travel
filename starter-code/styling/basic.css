@@ -200,4 +200,30 @@ main .right-sec {
 }
 #dest .sub-h2 {
   color: var(--blue);
+}
+
+.page-title {
+  position: absolute;
+  top: 13.25rem;
+  left: 10rem;
+}
+
+#crew {
+  background-image: url(../assets/crew/background-crew-desktop.jpg);
+  background-size: cover;
+  padding-bottom: 0;
+}
+#crew .left-sec {
+  width: max(20rem, 40vw);
+  justify-content: center;
+}
+#crew .left-sec .nav-txt li {
+  border: none !important;
+}
+#crew .left-sec .nav-txt li input {
+  opacity: 0.5;
+  accent-color: transparent;
+}
+#crew .left-sec .nav-txt li input:checked {
+  opacity: 1;
 }/*# sourceMappingURL=basic.css.map */

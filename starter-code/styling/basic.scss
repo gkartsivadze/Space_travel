@@ -201,3 +201,31 @@ main {
         color: var(--blue);
     }
 }
+
+.page-title {
+    position: absolute;
+    top: 13.25rem;
+    left: 10rem;
+}
+
+#crew {
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+    background-size: cover;
+    padding-bottom: 0;
+    .left-sec {
+        width: max(20rem, 40vw);
+        justify-content: center;
+        .nav-txt {
+            li {
+                border: none !important;
+                input {
+                    opacity: 0.5;
+                    accent-color: transparent;
+                    &:checked {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
