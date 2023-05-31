@@ -16,6 +16,10 @@ a {
   text-decoration: none;
 }
 
+.active {
+  border-bottom: 3px solid var(--white) !important;
+}
+
 #logo {
   aspect-ratio: 1;
 }
@@ -46,11 +50,26 @@ h4 {
 }
 
 h5 {
-  color: var(--blue);
   font-family: "Barlow Condensed";
   font-size: 1.75rem;
   font-weight: 400;
   letter-spacing: 4.75px;
+}
+
+.nav-txt {
+  font-family: "Barlow Condensed";
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+}
+.nav-txt li {
+  margin-left: 1.7rem;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.2s;
+}
+.nav-txt li:hover {
+  border-bottom: 3px solid #979797;
 }
 
 .sub-h1 {
@@ -61,6 +80,7 @@ h5 {
   font-family: "Barlow Condensed";
   font-size: 0.875rem;
   letter-spacing: 2.35px;
+  line-height: 2rem;
 }
 
 .main-btn {
@@ -90,26 +110,17 @@ header img {
   max-width: 100%;
 }
 header nav {
-  font-family: "Barlow Condensed";
-  letter-spacing: 2.7px;
   padding-left: 5rem;
   -webkit-backdrop-filter: blur(82px);
           backdrop-filter: blur(82px);
 }
 header nav ul {
-  list-style: none;
-  display: flex;
   gap: 3rem;
   margin-right: 10rem;
 }
 header nav ul li {
   margin-inline: 1.5rem;
   text-transform: uppercase;
-  border-bottom: 3px solid transparent;
-  transition: border-bottom 0.2s;
-}
-header nav ul li:hover {
-  border-bottom: 3px solid #979797;
 }
 header nav ul li a {
   display: block;
@@ -152,4 +163,42 @@ main .left-sec {
 main .right-sec {
   display: grid;
   place-items: end;
+}
+
+#dist-trav-info {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  text-transform: uppercase;
+}
+
+#dest-menu li {
+  padding-block: 0.75rem;
+}
+
+#home {
+  background-image: url(../assets/home/background-home-desktop.jpg);
+  background-size: cover;
+}
+#home h5 {
+  color: var(--blue);
+}
+
+#dest {
+  background-image: url(../assets/destination/background-destination-desktop.jpg);
+  background-size: cover;
+}
+#dest main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  justify-content: space-evenly;
+}
+#dest .right-sec {
+  align-items: start;
+  justify-content: center;
+  height: 30rem;
+}
+#dest .sub-h2 {
+  color: var(--blue);
 }/*# sourceMappingURL=basic.css.map */
