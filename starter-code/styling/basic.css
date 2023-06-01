@@ -487,9 +487,6 @@ main .right-sec {
   }
 }
 @media (max-width: 550px) {
-  html {
-    font-size: 10px;
-  }
   main:not(.io) {
     padding-inline: 1rem !important;
   }
