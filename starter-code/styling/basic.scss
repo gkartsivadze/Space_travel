@@ -110,6 +110,8 @@ label {
     text-transform: uppercase;
     transition: box-shadow 0.2s;
     border: none;
+    background-color: var(--white);
+    color: var(--black);
     &:hover {
         box-shadow: 0 0 0 5.5rem hsla(0, 0%, 59%, 0.5);
     }
@@ -422,7 +424,7 @@ main {
         main {
             place-items: center;
             grid-template-columns: 1fr;
-            row-gap: 3rem;
+            row-gap: 2rem;
             img {
                 width: 18.75rem;
                 height: 18.75rem;
@@ -577,6 +579,12 @@ main {
 }
 
 @media (max-width: 500px) {
+    h3 {
+        font-size: 2.5rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+    }
     #menu-cont {
         position: absolute;
         right: 3rem;
