@@ -27,9 +27,14 @@ a {
 html {
   font-family: Bellefair, sans-serif;
   color: var(--white);
+  background-color: var(--black);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-transform: uppercase;
 }
 
@@ -56,8 +61,13 @@ h5 {
   letter-spacing: 4.75px;
 }
 
-input {
+input,
+label {
   cursor: pointer;
+}
+
+#menu-cont {
+  display: none;
 }
 
 .nav-txt {
@@ -78,6 +88,7 @@ input {
 
 .sub-h1 {
   font-size: 1.5rem;
+  color: var(--blue);
 }
 
 .sub-h2 {
@@ -102,6 +113,10 @@ input {
 }
 
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   margin-top: 2.5rem;
   margin-left: 3.45rem;
   z-index: 9;
@@ -142,20 +157,19 @@ header nav ul li a {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding-bottom: 8rem;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 main {
+  padding-top: 15rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   padding-inline: 10rem;
+  min-height: 100vh;
 }
 main .left-sec {
   width: -moz-min-content;
@@ -200,23 +214,31 @@ main .right-sec {
 }
 #dest main {
   display: grid;
-  grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   row-gap: 4rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
   place-items: center;
   justify-content: space-evenly;
 }
 #dest .left-sec {
-  grid-row: 2/3;
+  grid-row: 1/2;
 }
 #dest .right-sec {
-  grid-row: 2/3;
+  grid-row: 1/2;
   grid-column: 2/3;
   place-items: start;
   height: 30rem;
 }
 #dest .sub-h2 {
   color: var(--blue);
+}
+#dest #planet_name,
+#dest #distance,
+#dest #description,
+#dest #travel_time,
+#dest #planet_image {
+  transition: filter 0.2s;
 }
 
 #crew {
@@ -259,6 +281,15 @@ main .right-sec {
   justify-content: center;
   grid-row: 1/2;
 }
+#crew #crew-img {
+  transition: 0.2s;
+}
+#crew #crew-img,
+#crew #name-last,
+#crew #crew-bio,
+#crew #position {
+  transition: 0.2s;
+}
 
 #technology {
   background-image: url(../assets/technology/background-technology-desktop.jpg);
@@ -291,8 +322,7 @@ main .right-sec {
 }
 #technology main {
   padding-right: 0;
-  align-items: center;
-  justify-content: space-between;
+  place-items: center;
   height: 60vh;
   gap: 5rem;
 }
@@ -300,6 +330,216 @@ main .right-sec {
   flex-shrink: 0;
   width: 30rem;
 }
-#technology main img {
-  max-width: 100%;
+
+@media (max-width: 1430px) {
+  #technology > main {
+    padding-left: 5rem;
+  }
+}
+@media (max-width: 1320px) {
+  #technology > main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  #technology > main .radio-cont {
+    flex-direction: row;
+    grid-row: 2/3;
+  }
+  #technology > main img {
+    grid-row: 1/3;
+  }
+}
+@media (max-width: 1270px) {
+  .hr {
+    display: none;
+  }
+  #home > main {
+    padding-top: 6.625rem;
+    padding-inline: 5rem;
+  }
+  nav > .nav-txt {
+    margin-right: 5rem;
+  }
+}
+@media (max-width: 1100px) {
+  html {
+    font-size: 12px;
+  }
+  .page-title {
+    left: 2.375rem;
+    top: 8.5rem;
+  }
+  #dest main {
+    place-items: center;
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+  }
+  #dest main img {
+    width: 18.75rem;
+    height: 18.75rem;
+  }
+  #dest .right-sec {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    place-items: center;
+  }
+  #dest #description {
+    text-align: center;
+  }
+  #dest #dist-trav-info {
+    border-top: 1px solid white;
+    place-items: center;
+    padding-top: 1.75rem;
+    row-gap: 0.75rem;
+  }
+  #dest #dist-trav-info .sub-h1 {
+    color: var(--white);
+  }
+  #crew main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 9.688rem;
+  }
+  #crew main img {
+    width: auto;
+    max-height: 60%;
+  }
+  #crew main .nav-txt input {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  #crew .left-sec {
+    align-items: center;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  #crew .left-sec #name-last, #crew .left-sec #crew-bio {
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+  #crew .left-sec #crew-bio {
+    line-height: 2.5rem;
+  }
+  #crew .left-sec #position {
+    text-align: center;
+  }
+}
+@media (max-width: 1050px) {
+  b {
+    display: none;
+  }
+  header {
+    margin-top: 0;
+  }
+  header nav {
+    padding-inline: 3rem;
+  }
+  header nav > .nav-txt {
+    margin-right: 0;
+    gap: 0;
+  }
+  header nav > .nav-txt li {
+    margin-left: 0;
+  }
+  #home main {
+    flex-direction: column;
+    align-items: center;
+    gap: 9.75rem;
+  }
+  #home main p {
+    text-align: center;
+  }
+  #home main .left-sec,
+  #home main .right-sec {
+    width: auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 990px) {
+  #technology main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5rem 1fr;
+    padding-left: 0;
+    place-items: center;
+  }
+  #technology main > * {
+    grid-column: 1/2;
+  }
+  #technology main img {
+    grid-row: 1/2;
+    width: 100%;
+  }
+  #technology main .left-sec {
+    grid-row: 3/4;
+    width: auto;
+    align-items: center;
+    padding-inline: 10rem;
+    text-align: center;
+  }
+}
+@media (max-width: 750px) {
+  #technology main .left-sec {
+    padding-inline: 3rem;
+  }
+}
+@media (max-width: 550px) {
+  main:not(.io) {
+    padding-inline: 1rem !important;
+  }
+  #destination main img {
+    height: 14rem;
+    width: 14rem;
+  }
+  #crew main {
+    flex-direction: column-reverse;
+  }
+  #crew main img {
+    border-bottom: 1px solid var(--white);
+    max-height: 40%;
+  }
+}
+@media (max-width: 500px) {
+  #menu-cont {
+    position: absolute;
+    right: 3rem;
+    top: 1rem;
+    display: block;
+    z-index: 11;
+  }
+  #menu-cont input {
+    position: absolute;
+    visibility: hidden;
+  }
+  header {
+    margin-top: 2rem;
+  }
+  header b {
+    display: inline;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding-top: 9.833rem;
+    padding-inline: 0;
+    transition: transform 0.2s;
+    transform: translate(100%);
+  }
+  header .nav-txt {
+    flex-direction: column;
+  }
+  header .nav-txt li {
+    margin: 0;
+  }
+  header .nav-txt a {
+    padding-left: 4rem;
+    padding-right: 7.917rem;
+  }
+  #home > main {
+    gap: 5rem;
+  }
 }/*# sourceMappingURL=basic.css.map */
