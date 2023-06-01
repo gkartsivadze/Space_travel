@@ -56,6 +56,10 @@ h5 {
   letter-spacing: 4.75px;
 }
 
+input {
+  cursor: pointer;
+}
+
 .nav-txt {
   font-family: "Barlow Condensed";
   letter-spacing: 2.7px;
@@ -176,6 +180,12 @@ main .right-sec {
   padding-block: 0.75rem;
 }
 
+.page-title {
+  position: absolute;
+  top: 13.25rem;
+  left: 10rem;
+}
+
 #home {
   background-image: url(../assets/home/background-home-desktop.jpg);
   background-size: cover;
@@ -190,11 +200,18 @@ main .right-sec {
 }
 #dest main {
   display: grid;
+  grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
+  row-gap: 4rem;
   place-items: center;
   justify-content: space-evenly;
 }
+#dest .left-sec {
+  grid-row: 2/3;
+}
 #dest .right-sec {
+  grid-row: 2/3;
+  grid-column: 2/3;
   place-items: start;
   height: 30rem;
 }
@@ -202,28 +219,87 @@ main .right-sec {
   color: var(--blue);
 }
 
-.page-title {
-  position: absolute;
-  top: 13.25rem;
-  left: 10rem;
-}
-
 #crew {
   background-image: url(../assets/crew/background-crew-desktop.jpg);
   background-size: cover;
   padding-bottom: 0;
+  overflow: hidden;
 }
-#crew .left-sec {
-  width: max(20rem, 40vw);
-  justify-content: center;
+#crew main {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: 2fr 0.25fr;
+  height: 80vh;
 }
-#crew .left-sec .nav-txt li {
+#crew main img {
+  grid-row: 1/3;
+  grid-column: 2/3;
+  height: 100%;
+}
+#crew main .nav-txt {
+  grid-row: 2/3;
+}
+#crew main .nav-txt li {
   border: none !important;
 }
-#crew .left-sec .nav-txt li input {
+#crew main .nav-txt li input {
   opacity: 0.5;
   accent-color: transparent;
+  width: 2rem;
+  height: 2rem;
 }
-#crew .left-sec .nav-txt li input:checked {
+#crew main .nav-txt li input:checked {
   opacity: 1;
+}
+#crew main .nav-txt li input:hover {
+  opacity: 0.75;
+}
+#crew .left-sec {
+  width: max(30rem, 50vw);
+  justify-content: center;
+  grid-row: 1/2;
+}
+
+#technology {
+  background-image: url(../assets/technology/background-technology-desktop.jpg);
+  background-size: cover;
+}
+#technology .radio-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#technology .radio-cont .for_radio {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: grid;
+  place-items: center;
+}
+#technology .radio-cont input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+#technology .radio-cont input[type=radio]:checked + label {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+#technology main {
+  padding-right: 0;
+  align-items: center;
+  justify-content: space-between;
+  height: 60vh;
+  gap: 5rem;
+}
+#technology main .left-sec {
+  flex-shrink: 0;
+  width: 30rem;
+}
+#technology main img {
+  max-width: 100%;
 }/*# sourceMappingURL=basic.css.map */

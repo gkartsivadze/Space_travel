@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styling/basic.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+<body id="technology">
+
+  <header>
+    <img id="logo" src="./assets/shared/logo.svg" alt="Logo">
+    <div class="hr"></div>
+    <nav>
+      <ul class="nav-txt">
+        <li><a href="./index.html"><b>00</b> Home</a></li>
+        <li><a href="./destination.html"><b>01</b> Destination</a></li>
+        <li><a href="./crew.html"><b>02</b> Crew</a></li>
+        <li class="active"><a href="#"><b>03</b> Technology</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h5 class="page-title"><span style="color: rgba(255, 255, 255, 0.25)">03</span> Space launch 101</h5>
+  <main>
+  <div class="radio-cont">
+    <input id="space1" type="radio" name="space_launch" checked>
+    <label for="space1" class="for_radio">1</label>
+    <input id="space2" type="radio" name="space_launch">
+    <label for="space2" class="for_radio">2</label>
+    <input id="space3" type="radio" name="space_launch">
+    <label for="space3" class="for_radio">3</label>
+  </div>
+  <div class="left-sec">
+    <p class="nav-txt">The terminology...</p>
+    <h3 id="technology_name">Launch Vehicle</h3>
+  
+    <p id="technology_title" class="sub-h2">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+  </div>
+  <img id="technology_image" src="./assets/technology/image-launch-vehicle-portrait.jpg" alt="Technology photo">
+</main>
+<script src="./technology.js"></script>
+</body>
+</html>
