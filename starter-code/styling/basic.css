@@ -163,7 +163,7 @@ body {
 }
 
 main {
-  padding-top: 15rem;
+  padding-top: 10rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -542,5 +542,9 @@ main .right-sec {
   }
   #home > main {
     gap: 5rem;
+  }
+  #technology .radio-cont .for_radio {
+    width: 2rem;
+    height: 2rem;
   }
 }/*# sourceMappingURL=basic.css.map */
