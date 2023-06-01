@@ -107,6 +107,7 @@ label {
   border-radius: 50%;
   text-transform: uppercase;
   transition: box-shadow 0.2s;
+  border: none;
 }
 .main-btn:hover {
   box-shadow: 0 0 0 5.5rem hsla(0, 0%, 59%, 0.5);
@@ -486,6 +487,9 @@ main .right-sec {
   }
 }
 @media (max-width: 550px) {
+  html {
+    font-size: 10px;
+  }
   main:not(.io) {
     padding-inline: 1rem !important;
   }
